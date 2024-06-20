@@ -182,3 +182,14 @@ SELECT EDT_NOME, SUM(QUANT) AS QUANT_LIVROS
 FROM ConsultaCTE
 GROUP BY EDT_NOME
 ORDER BY QUANT_LIVROS
+
+
+/* 
+	CAST and CONVERT
+		- Date and time styles: https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver16&redirectedfrom=MSDN#date-and-time-styles
+*/
+SELECT 'O preço do livro ' + LVR_NOME + ' é: ' + CAST(LVR_PRECO AS VARCHAR(6)) FROM TB_LIVRO WHERE LVR_ID = 103
+SELECT 'O preço do livro ' + LVR_NOME + ' é: ' + CONVERT(VARCHAR(6), LVR_PRECO) FROM TB_LIVRO 
+
+SELECT 'A data de publicação do livro é: ' + CONVERT(VARCHAR(15), LVR_DATA_PUB, 103) FROM TB_LIVRO WHERE LVR_ID = 104
+
