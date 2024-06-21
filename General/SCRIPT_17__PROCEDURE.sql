@@ -56,3 +56,19 @@
 
 --EXEC PR_EDITORA_INSERIR 'My name example'
 --SELECT * FROM TB_EDITORA 
+
+
+
+
+/******** DEFAULT VALUES ********/
+CREATE PROCEDURE PR_TEST_DEFAULT_VALUES
+(
+	@PARAM_1 INT,
+	@PARAM_2 VARCHAR(20) = 'I am default!'
+) AS 
+BEGIN
+	SELECT 'Value param 1: ' + CAST(@PARAM_1 AS VARCHAR(5))
+	SELECT 'Value param 2: ' + @PARAM_2
+END
+
+EXEC PR_TEST_DEFAULT_VALUES @PARAM_2 = 'Not default', @PARAM_1 = 15
