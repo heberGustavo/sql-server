@@ -11,7 +11,7 @@ VALUES
 INSERT INTO TB_EDITORA (EDT_NOME)
 VALUES
 ('Prentice Hall'),
-('O´Reilly'),
+('OÂ´Reilly'),
 ('Microsoft Press'),
 ('Wiley');
 
