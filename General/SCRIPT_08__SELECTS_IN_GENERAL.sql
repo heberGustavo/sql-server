@@ -29,7 +29,7 @@ SELECT TOP 3 * FROM TB_LIVRO
 SELECT 
 	LVR_ID AS MEU_ID
 	, LVR_NOME AS NOME_LIVRO
-	, LVR_DATA_PUB AS 'DATA DA PUBLICAÇÃO'
+	, LVR_DATA_PUB AS 'DATA DA PUBLICAÃ‡ÃƒO'
 FROM TB_LIVRO
 
 
@@ -48,13 +48,13 @@ SELECT EDT_ID FROM TB_EDITORA
 SELECT COUNT(*) AS QUANT_ITENS FROM TB_AUTOR
 
 /******* MAX *******/
-SELECT MAX(LVR_PRECO) AS PREÇO_MAXIMO FROM TB_LIVRO
+SELECT MAX(LVR_PRECO) AS PREÃ‡O_MAXIMO FROM TB_LIVRO
 
 /******* MIN *******/
-SELECT MIN(LVR_PRECO) AS PREÇO_MINIMO FROM TB_LIVRO
+SELECT MIN(LVR_PRECO) AS PREÃ‡O_MINIMO FROM TB_LIVRO
 
 /******* AVG *******/
-SELECT AVG(LVR_PRECO) AS MÉDIA FROM TB_LIVRO
+SELECT AVG(LVR_PRECO) AS MÃ‰DIA FROM TB_LIVRO
 
 /******* SUM *******/
 SELECT SUM(LVR_PRECO) AS SOMA_TOTAL FROM TB_LIVRO
@@ -150,7 +150,7 @@ SELECT 'Eu gosto do livro: ' + L.LVR_NOME FROM TB_LIVRO L
 --	, PONTOS INT
 --)
 
---INSERT INTO TB_TIMES(NOME_TIME, PONTOS) VALUES ('Brasil', 72), ('Argentina', 71), ('Espanha', 71), ('Inglaterra', 70), ('Holanda', 70), ('Portugal', 70), ('Suiça', 69)
+--INSERT INTO TB_TIMES(NOME_TIME, PONTOS) VALUES ('Brasil', 72), ('Argentina', 71), ('Espanha', 71), ('Inglaterra', 70), ('Holanda', 70), ('Portugal', 70), ('SuiÃ§a', 69)
 --INSERT INTO TB_TIMES(NOME_TIME, PONTOS) VALUES ('Israel', 73)
 
 SELECT TOP (3) WITH TIES *
@@ -188,8 +188,8 @@ ORDER BY QUANT_LIVROS
 	CAST and CONVERT
 		- Date and time styles: https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver16&redirectedfrom=MSDN#date-and-time-styles
 */
-SELECT 'O preço do livro ' + LVR_NOME + ' é: ' + CAST(LVR_PRECO AS VARCHAR(6)) FROM TB_LIVRO WHERE LVR_ID = 103
-SELECT 'O preço do livro ' + LVR_NOME + ' é: ' + CONVERT(VARCHAR(6), LVR_PRECO) FROM TB_LIVRO 
+SELECT 'O preÃ§o do livro ' + LVR_NOME + ' Ã©: ' + CAST(LVR_PRECO AS VARCHAR(6)) FROM TB_LIVRO WHERE LVR_ID = 103
+SELECT 'O preÃ§o do livro ' + LVR_NOME + ' Ã©: ' + CONVERT(VARCHAR(6), LVR_PRECO) FROM TB_LIVRO 
 
-SELECT 'A data de publicação do livro é: ' + CONVERT(VARCHAR(15), LVR_DATA_PUB, 103) FROM TB_LIVRO WHERE LVR_ID = 104
+SELECT 'A data de publicaÃ§Ã£o do livro Ã©: ' + CONVERT(VARCHAR(15), LVR_DATA_PUB, 103) FROM TB_LIVRO WHERE LVR_ID = 104
 
